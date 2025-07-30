@@ -3,6 +3,14 @@ import { AuthContext } from "../../src/auth";
 import { MemoryRouter } from "react-router-dom";
 import { AppRouter } from "../../src/router/AppRouter";
 
+jest.mock("../../src/heroes/components/HeroCard", () => ({
+  HeroCard: () => <div>Mocked HeroCard</div>,
+}));
+
+jest.mock("../../src/heroes/pages/HeroPage", () => ({
+  HeroPage: () => <div>Mocked HeroPage</div>,
+}));
+
 describe("Pruebas en <AppRouter />", () => {
   test("debe de mostrar el login si no está autenticado", () => {
     const contextValue = {
