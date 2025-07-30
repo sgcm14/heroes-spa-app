@@ -9,7 +9,6 @@ export const LoginPage = () => {
   const onLogin = () => {
     const lastPath = localStorage.getItem("lastPath") || "/";
     login("SGCM");
-    // console.log("lastPath",lastPath)
     navigate(lastPath, {
       replace: true,
     });
